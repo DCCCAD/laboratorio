@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario | LAB</title>
+    <style>
+        body{ /*.inputOthers:focus ~ .inputCheck:checked{display: block;}*/
+            background-image: linear-gradient(to right, rgb(170, 247, 220), rgb(17, 74, 71));
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .box {
+            color: white;
+            position: absolute;
+            background-color: rgb(20, 70, 90, 0.8);
+            transform: translate(-50%, -50%);
+            padding: 15px;
+            border-radius: 15px;
+            top: 50%;
+            left: 50%;
+            width: 70%;
+        }
+        
+        fieldset {
+            border: 3px solid dodgerblue
+        }
+        legend {
+            background-color: dodgerblue;
+            border:1px solid dodgerblue;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+        }.inputBox {
+            position: relative;
+        }
+        .inputReserva {
+            background: none; border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }.inputReserva::placeholder { text-align: end; }
+        .labelInput {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5s;
+        }#file {
+            margin-top: 5px;
+        }
+        .inputReserva:focus ~ .labelInput,
+        .inputReserva:valid ~.labelInput {
+            top: -20px;
+            font-size: 12px;
+            color: dodgerblue;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box backgradient">
+        <form action="https://formsubmit.co/b092a3476a9e1d898ccfc6c73c4a1ef7" method="POST">
+            <fieldset>
+                <legend><b>Reversa Laboratorio</b></legend>
+                <br/>
+                <div class="inputBox">
+                    <input type="text" name="Curso/Disciplina" class="inputReserva" id="curso" placeholder="Ex: Desenhos de Construção Civil" required>
+                    <label for="curso" class="labelInput">Curso/Disciplina *</label>
+                </div>
+                <br/><br/>
+                <div class="inputBox">
+                    <input type="text" name="Departamento" class="inputReserva" id="depart" placeholder="Ex: Edifícios" required>
+                    <label for="depart" class="labelInput">Departamento *</label>
+                </div>
+                <br/><br/>
+                <div class="inputBox">
+                    <input type="text" name="Responsavel" class="inputReserva" id="resp" placeholder="Ex: Prof. Me. Ieda M. Nolla" required>
+                    <label for="resp" class="labelInput">Nome do(a) Responsavel pelo Curso/Disciplina *</label>
+                </div>
+                <br/><br/>
+                <div class="inputBox">
+                    <input type="text" name="Professor" class="inputReserva" id="prof" placeholder="Ex: Prof. Silvio A. Santos" required>
+                    <label for="prof" class="labelInput">Nome do Professor(a) que ministrará o Curso/Disciplina *</label>
+                </div>
+                <br/><br/>
+                <div class="inputBox">
+                    <input type="text" name="Reserva" class="inputReserva" id="reserva" placeholder="dd/mm/aaaa" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" required>
+                    <label for="reserva" class="labelInput">Data da Reserva *</label>
+                </div>
+                <br/><br/>
+
+                <div class="inputBox">
+                    <input type="text" name="Horário da Reserva" class="inputReserva" id="reserva-hora" placeholder="hh:mm" onfocus="this.type='time'" onblur="if(!this.value)this.type='text'" required>
+                    <label for="reserva-hora" class="labelInput">Horário da Reserva *</label>
+                </div>
+                <br/><br/>
+            
+                <div class="inputBox">
+                    <input type="number" name="Estimativa da qtd de alunos" class="inputReserva" id="num-alunos" placeholder="Max: 20 alunos por laboratório" required>
+                    <label for="num-alunos" class="labelInput">Estimativa da quantidade de alunos *</label>
+                </div>
+                <br/><br/>
+            <p>Programas *</p>
+                <!--<div name="Programas" id="programs">--><!--</div>-->
+                <input type="checkbox" name="AutoCAD 2024/5" id="autocad" checked><label for="autocad"> AutoCad 2024/5</label>
+                    <br/>
+                <input type="checkbox" name="SketchUP" id="sketchup"><label for="sketchup"> SketchUP</label>
+                    <br/>
+                <input type="checkbox" name="Revit 2024/5" id="revit"><label for="revit">  Revit 2024</label>
+                    <br/>
+                <input type="checkbox" name="Office 2019" id="office"><label for="office"> Office 2019</label>
+                    <br/>
+
+                <input type="checkbox" name="selectOthers" class="" id="others" onfocus="this.checked='true', this.value=''" onblur="if(this.value =='')this.checked='false'"><label for="others solicita"> Outher</label>
+                <input type="text" name="inputOthers" onkeydown="" class="inputReserva" id="solicita" placeholder="Ex: Visual Studio">
+                    <br/><br/>
+                <p id="adendo-forms">Caso precise de uma monitoria durante o uso do laboratório escreva aqui...</p>
+                <div class="inputBox">
+                    <textarea name="message" class="textareaReserva" id="solicitacoes" wrap="hard" placeholder="Diga-me o seu pedido..."></textarea>
+M                    <label for="solicitacoes" class="labelTextarea">Campo para solicitar algum Pedido/Item</label>
+
+                </div>
+                <style>
+                    .textareaReserva {
+                        background: none; border: none;
+                        border-bottom: 1px solid white;
+                        outline: none;
+                        color: white;
+                        font-size: 15px;
+                        width: 100%;
+                        letter-spacing: 2px;
+                    }.textareaReserva::placeholder { text-align: end; }
+                    .labelTextarea {
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        pointer-events: none;
+                        transition: .5s;
+                    }
+                    .textareaReserva:focus ~ .labelTextarea,
+                    .textareaReserva:default:user-valid ~.labelTextarea {
+                        top: -20px;
+                        font-size: 12px;
+                        color: dodgerblue;
+                    }
+                </style>
+                <br/><br/>
+                <div class="inputBox">
+                    <label for="file" class="" id="label-file">Arquivo</label>
+                    <input type="file" name="Arquivo" class="inputReserva" id="file">
+                </div>
+                <br/>
+                <!--<input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">-->
+                <p id="legenda-simbolos"> * Campo Obrigatório </p>
+                <h2 class="titulo-informativo">Aviso</h2>
+                <p>Aos responsáveis pela reserva do Laboratório, compete 
+                    zelar pela integridade das instalações, o cumprimento das regras do laboratório e pela eventual retirada e 
+                    devolução das chaves. Aguarde confirmação da reserva no e-mail indicado.
+                </p>
+                <button type="submit">Send</button>
+            </fieldset>
+        </form>
+    </div>
+    <script>
+        // teclas-> Esc=27 Shift=16 Ctrl=17 Del=46 BackSpace=8 Tab=9 CapsLock=20 '"=192 -=189  ==187 [=221 ]=220 
+        // F1-F12 -> 112-123 Windows=91 Alt=18
+        var inputOthers = window.document.querySelector(".inputOthers");
+        //var bclass = window.document.querySelector(".inputOthers");
+        //somente estão sendo desativadas teclas do lado esquerdo do teclado,
+        //  teclas na parte de setas ou numericas de funções não foram desativas...
+        function inicializa(){var tecla = event.keyCode;
+            if(tecla == 8 || tecla == 9 || tecla == 16 || tecla == 17 || tecla == 18 || tecla == 20 || tecla == 27 || tecla == 46 
+            /*|| tecla == 91*/ || tecla == 187 || tecla == 189 || tecla == 192 || tecla == 220 || tecla == 220)
+                    inputOthers.checked =false;
+            else inputOthers.checked = true;
+        } //capturar até a penúltima letra apagada para ativar o checked****************
+    </script>
+</body>
+</html>

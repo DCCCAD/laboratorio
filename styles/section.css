@@ -1,7 +1,7 @@
  /********************************************/
 /*                  CLASS                   */
 .conteudo-main{/*TAG: section*/
-    
+    display: flex; flex-direction: column; width: 70%; margin: auto;
 }
 .container-section {
     background-color: bisque;
@@ -128,22 +128,29 @@
 
 
 /**************** PAGE 2 - RESERVAS.HTML*********************/
-.reserva-cad input[type="text"], textarea, label {/* todo input dentro da class receberá o stylo*/
+.reserva-cad input[type="text"], input[type="date"], input[type="time"], input[type="number"], input[type="email"],
+  textarea,
+  label[for="curso"], label[for="depart"], label[for="resp"], label[for="prof"], label[for="reserva"], label[for="reserva-hora"], label[for="num-alunos"] {/* todo input dentro da class receberá o stylo*/
     width: 99%;
-    padding: 8px 0px;
+    padding: 12px;
     margin: 8px 0px;
 }.reserva-cad { margin-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: large;
-}.reserva-cad h2 {
+}.reserva-cad .titulo-informativo {
     font-weight: 600;
+    font-size: x-large;
     padding: 5px 0px;
-}
+}p[id="legenda-simbolos"] { font-size: x-large;}
+button[id="btn-submit"] { width: 99%; padding: 20px; display: flex; justify-content: center; align-items: center; }
 
-#curso, #depart, #resp, #prof {
-    padding: 12px;
-}
-#others[id=outhers]{ margin-left: 20px; width: 80%;}
+    
 
+/*#programs input[type="text"]{ padding: 10px 0px; }*/
+
+/*#curso, #depart, #resp, #prof, #reserva, #reserva-hora, #num-alunos { padding: 12px; }*/
+
+/*#others[id=outhers]{ margin-left: 20px; width: 80%;} diferencia dos outros inputs*/
+#adendo-forms { font-size: small; color: tomato;}
 textarea[id="solicitacoes"] {
     width: 95%;
     height: 100px;
