@@ -1,6 +1,6 @@
  /********************************************/
 /*                  CLASS                   */
-.conteudo-main{/*TAG: section*/
+.section-center {/*TAG: section*/
     display: flex; flex-direction: column; width: 70%; margin: auto;
 }
 .container-section {
@@ -119,18 +119,16 @@
     display: inline-block;
     transition: background-color 0.3s ease;
 }
-.active-carrossel-container{
-    
-}
+/*.active-carrossel-container{}*/
 .dot:hover {
     background-color: #717171;
 }
 
 
 /**************** PAGE 2 - RESERVAS.HTML*********************/
-.reserva-cad input[type="text"], input[type="date"], input[type="time"], input[type="number"], input[type="email"],
-  textarea,
-  label[for="curso"], label[for="depart"], label[for="resp"], label[for="prof"], label[for="reserva"], label[for="reserva-hora"], label[for="num-alunos"] {/* todo input dentro da class receberá o stylo*/
+.reserva-cad input[type="text"], input[type="datetime-local"], input[type="time"], input[type="number"], input[type="email"],
+   textarea,
+    label[for="curso"], label[for="depart"], label[for="resp"], label[for="prof"], label[for="reserva-data"], label[for="reserva-hora"], label[for="num-alunos"], label[for="inputOthers"], label[for="email-resp"], label[for="email-resp"], label[for="solicitacoes"] {/* todo input dentro da class receberá o stylo*/
     width: 99%;
     padding: 12px;
     margin: 8px 0px;
@@ -141,9 +139,9 @@
     font-size: x-large;
     padding: 5px 0px;
 }p[id="legenda-simbolos"] { font-size: x-large;}
-button[id="btn-submit"] { width: 99%; padding: 20px; display: flex; justify-content: center; align-items: center; }
+button[id="btn-submit"] { width: 100%; padding: 20px; display: flex; justify-content: center; align-items: center; }
 
-    
+
 
 /*#programs input[type="text"]{ padding: 10px 0px; }*/
 
@@ -152,7 +150,7 @@ button[id="btn-submit"] { width: 99%; padding: 20px; display: flex; justify-cont
 /*#others[id=outhers]{ margin-left: 20px; width: 80%;} diferencia dos outros inputs*/
 #adendo-forms { font-size: small; color: tomato;}
 textarea[id="solicitacoes"] {
-    width: 95%;
+    width: 98%;
     height: 100px;
     padding: 15px;
     font-size: large;
@@ -168,6 +166,11 @@ button {
 }button:hover {
     opacity: 0.7;
 }
+div[class="grade-lab"]{
+    margin: auto;
+    padding: 0px 10px;
+    width: 98%;
+}
 
  /****************************************/
 /*                  IDs                 */
@@ -175,3 +178,4 @@ button {
 #div-container2{
     padding-left: 0vh 2vw;
 }
+img[id="gradeAula"] { width: 100%; }

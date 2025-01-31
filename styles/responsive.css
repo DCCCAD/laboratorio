@@ -74,6 +74,7 @@
     }
     .mobile-menu {
         display: block;
+        margin-left: 10px;
     }
 }
 @media(max-height: 800px){ /*ALTURA*/
@@ -176,7 +177,7 @@
     @media(max-width:1799px){.banner{ font-size: x-large; }
                              .p-footer { font-size: large; }
     }
-}
+}@media(max-width: 1799px){ p[class="p-footer"]{ line-height: 25px; } }
 @media(min-width: 1800px){
     @media(max-width: 2199px){
         .banner{ font-size: x-large; }
@@ -191,7 +192,7 @@
         #b-aux-container { font-size: xx-large; }
 
         .h2-footer { font-size: xx-large; }
-        .p-footer { font-size: x-large; }
+        .p-footer { font-size: x-large; line-height: 25px; }
         .copy-right-footer { font-size: medium; }
     }
 }

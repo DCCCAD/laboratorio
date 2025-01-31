@@ -5,30 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario | LAB</title>
     <style>
+        /**{ padding: 0; }*/
         body{ /*.inputOthers:focus ~ .inputCheck:checked{display: block;}*/
             background-image: linear-gradient(to right, rgb(170, 247, 220), rgb(17, 74, 71));
             font-family: Arial, Helvetica, sans-serif;
+            padding:0 !important;
         }
         .box {
             color: white;
             position: absolute;
             background-color: rgb(20, 70, 90, 0.8);
-            transform: translate(-50%, -50%);
+            /*transform: translate(-50%, -50%);*/
             padding: 15px;
             border-radius: 15px;
-            top: 50%;
+            /*top: 60%;
             left: 50%;
-            width: 70%;
+            width: 70%;*/
         }
         
         fieldset {
             border: 3px solid dodgerblue
         }
-        legend {
+        legend { z-index: 1;
+            position: relative;
             background-color: dodgerblue;
             border:1px solid dodgerblue;
             padding: 10px;
-            text-align: center;
+            /*text-align: center;*/
             border-radius: 8px;
         }.inputBox {
             position: relative;
@@ -60,14 +63,15 @@
         }
     </style>
 </head>
-<body>
+<body onclick="disablecheck()" onkeypress="disablecheck()">
     <div class="box backgradient">
         <form action="https://formsubmit.co/b092a3476a9e1d898ccfc6c73c4a1ef7" method="POST">
             <fieldset>
                 <legend><b>Reversa Laboratorio</b></legend>
+                
                 <br/>
                 <div class="inputBox">
-                    <input type="text" name="Curso/Disciplina" class="inputReserva" id="curso" placeholder="Ex: Desenhos de Construção Civil" required>
+                    <input type="text" name="Curso/Disciplina" class="inputReserva" id="curso" placeholder="Ex: Desenhos de Construção Civil" autofocus required>
                     <label for="curso" class="labelInput">Curso/Disciplina *</label>
                 </div>
                 <br/><br/>
@@ -99,32 +103,42 @@
                 <br/><br/>
             
                 <div class="inputBox">
-                    <input type="number" name="Estimativa da qtd de alunos" class="inputReserva" id="num-alunos" placeholder="Max: 20 alunos por laboratório" required>
+                    <input type="text" name="Estimativa da qtd de alunos" class="inputReserva" id="num-alunos" placeholder="Max: 20 alunos por laboratório" onfocus="this.type='number'" onblur="if(!this.value)this.type='text'" required>
                     <label for="num-alunos" class="labelInput">Estimativa da quantidade de alunos *</label>
                 </div>
                 <br/><br/>
-            <p>Programas *</p>
+            <p>Programas </p>
                 <!--<div name="Programas" id="programs">--><!--</div>-->
                 <input type="checkbox" name="AutoCAD 2024/5" id="autocad" checked><label for="autocad"> AutoCad 2024/5</label>
                     <br/>
                 <input type="checkbox" name="SketchUP" id="sketchup"><label for="sketchup"> SketchUP</label>
                     <br/>
-                <input type="checkbox" name="Revit 2024/5" id="revit"><label for="revit">  Revit 2024</label>
+                <input type="checkbox" name="Revit 2024/5" id="revit"><label for="revit">  Revit 2024/5</label>
                     <br/>
                 <input type="checkbox" name="Office 2019" id="office"><label for="office"> Office 2019</label>
                     <br/>
 
-                <input type="checkbox" name="selectOthers" class="" id="others" onfocus="this.checked='true', this.value=''" onblur="if(this.value =='')this.checked='false'"><label for="others solicita"> Outher</label>
-                <input type="text" name="inputOthers" onkeydown="" class="inputReserva" id="solicita" placeholder="Ex: Visual Studio">
+                <input type="checkbox" name="Check Box Others" class="checkboxOthers" id="others" onfocus="this.checked='true'" onblur="if(this.value =='')this.checked=false">
+                <label for="others"> Outher</label>
+                <input type="text" name="inputOthers" onkeyup="inicializa()" onmouseout="disablecheck()" onpointerout="disablecheck()" onfocus="disablecheck()" class="inputReserva inputOthers" id="others" placeholder="Ex: Visual Studio">
                     <br/><br/>
-                <p id="adendo-forms">Caso precise de uma monitoria durante o uso do laboratório escreva aqui...</p>
+
                 <div class="inputBox">
-                    <textarea name="message" class="textareaReserva" id="solicitacoes" wrap="hard" placeholder="Diga-me o seu pedido..."></textarea>
-M                    <label for="solicitacoes" class="labelTextarea">Campo para solicitar algum Pedido/Item</label>
+                    <input type="text" name="Estimativa da qtd de alunos" class="inputReserva" id="email-prof" placeholder="Ex:silvio@fatecsp.br" onfocus="this.type='email'" onblur="if(!this.value)this.type='text'"  required>
+                    <label for="email-prof" class="labelInput">Email do Responsavel pela Reserva *</label>
+                </div>
+                <br/><br/>
+
+
+                <p id="adendo-forms">Caso precise de uma monitoria durante o uso do laboratório escreva aqui...</p>
+                <div class="inputBox messageArea">
+                    <textarea name="Message" class="textareaReserva" id="solicitacoes" wrap="hard" placeholder="Diga-me o seu pedido..."></textarea>
+                    <label for="solicitacoes" class="labelTextarea">Campo para solicitar algum Pedido/Item</label>
 
                 </div>
                 <style>
                     .textareaReserva {
+                        line-height: 8px;
                         background: none; border: none;
                         border-bottom: 1px solid white;
                         outline: none;
@@ -132,19 +146,36 @@ M                    <label for="solicitacoes" class="labelTextarea">Campo para 
                         font-size: 15px;
                         width: 100%;
                         letter-spacing: 2px;
-                    }.textareaReserva::placeholder { text-align: end; }
+                    }.textareaReserva::placeholder { position: relative; text-align: end; right: 10px; top: 5px; }/*20px*/
+                    .textareaReserva:focus { line-height: normal; height: auto!important; }
                     .labelTextarea {
                         position: absolute;
-                        top: 0px;
+                        top: 0px;/*20px*/
                         left: 0px;
                         pointer-events: none;
                         transition: .5s;
                     }
-                    .textareaReserva:focus ~ .labelTextarea,
-                    .textareaReserva:default:user-valid ~.labelTextarea {
+                    .textareaReserva:focus ~ .labelTextarea, .textareaReserva .labelInput {
                         top: -20px;
                         font-size: 12px;
                         color: dodgerblue;
+                    }/*.textareaReserva::first-letter + .labelInput{top:10px; font-size: normal; color: white;}*/
+
+                    /*div[class="border-animada"] {width: 100%; position: relative;}*/
+                    .path {
+                        width: 20px;
+                        height: 20px;
+                        background-color: dodgerblue;
+                        border-radius: 20px;
+                        text-align: center;
+                        /*position: relative;*/
+                    }.th-1{ animation: move 12s linear infinite; } 
+                     .th-2{ animation: move 15s linear infinite; }
+                     .th-3{ animation: move 18s linear infinite; }
+                    .rect-path { offset-path: rect(-20px auto auto auto );/* rect( <top> , <right> , <bottom> , <left> ) */ }
+                    @keyframes move {
+                          0% { offset-distance:   0%; }
+                        100% { offset-distance: 100%; }
                     }
                 </style>
                 <br/><br/>
@@ -161,22 +192,62 @@ M                    <label for="solicitacoes" class="labelTextarea">Campo para 
                     devolução das chaves. Aguarde confirmação da reserva no e-mail indicado.
                 </p>
                 <button type="submit">Send</button>
+                <div class="path th-1 rect-path">&nbsp;</div>
+                <div class="path th-2 rect-path">&nbsp;</div><!-- → -->
+                <div class="path th-3 rect-path">&nbsp;</div>
             </fieldset>
         </form>
     </div>
     <script>
-        // teclas-> Esc=27 Shift=16 Ctrl=17 Del=46 BackSpace=8 Tab=9 CapsLock=20 '"=192 -=189  ==187 [=221 ]=220 
+        /*while(checkOthers.checked == true){
+            if(putOthers.value == "")checkOthers.checked=true;
+            
+            alert(putOthers.value );
+        }*/
+        // teclas-> Esc=27 Shift=16 Ctrl=17 Del=46 BackSpace=8 Tab=9 CapsLock=20 Space=32 '"=192 -=189  ==187 [=221 ]=220
         // F1-F12 -> 112-123 Windows=91 Alt=18
-        var inputOthers = window.document.querySelector(".inputOthers");
-        //var bclass = window.document.querySelector(".inputOthers");
+        let checkOthers = window.document.querySelector(".checkboxOthers");
+        function disablecheck(){
+            let putOthers = window.document.querySelector(".inputOthers");
+            if(putOthers.value == "")checkOthers.checked=false;
+        }
         //somente estão sendo desativadas teclas do lado esquerdo do teclado,
         //  teclas na parte de setas ou numericas de funções não foram desativas...
-        function inicializa(){var tecla = event.keyCode;
-            if(tecla == 8 || tecla == 9 || tecla == 16 || tecla == 17 || tecla == 18 || tecla == 20 || tecla == 27 || tecla == 46 
+        function inicializa(){let tecla = event.keyCode;
+            if( tecla == 9 || tecla == 16 || tecla == 17 || tecla == 18 || tecla == 20 || tecla == 27 || tecla == 46 
             /*|| tecla == 91*/ || tecla == 187 || tecla == 189 || tecla == 192 || tecla == 220 || tecla == 220)
-                    inputOthers.checked =false;
-            else inputOthers.checked = true;
+                 checkOthers.checked =false;
+            else checkOthers.checked = true;
+            //disablecheck();
         } //capturar até a penúltima letra apagada para ativar o checked****************
+
+        //textAREA
+        function textArea(){
+            let labelput = window.document.getElementByClassName(".labelInput");
+            let txtarea = window.document.getElementByClassName(".textareaReserva");
+            let msgArea = window.document.getElementByClassName("messageArea").addEventListenner("keydown", msgArea.innerHTML = 
+                `<style>
+                    .textareaReserva:focus ~ .labelTextarea{
+                        top: -20px;
+                        font-size: 12px;
+                        color: dodgerblue;
+                    }</style>`
+            /*if(txtarea == ""){
+                txtarea.innerHTML = 
+                `<style>
+                    .textareaReserva:empty ~ .labelInput{ top:0px; font-size: normal; color: white; }
+                </style>`
+            }else{
+                txtarea.innerHTML = 
+                `<style>
+                    .textareaReserva ~ .labelTextarea{
+                        top: -20px;
+                        font-size: 12px;
+                        color: dodgerblue;
+                    }
+                </style>`
+            }*/
+        )}
     </script>
-</body>
+ </body>
 </html>
