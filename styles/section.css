@@ -127,7 +127,7 @@
 
 /**************** PAGE 2 - RESERVAS.HTML*********************/
 .reserva-cad input[type="text"], input[type="datetime-local"], input[type="time"], input[type="number"], input[type="email"],
-   textarea,
+   textarea[id="solicitacoes"],
     label[for="curso"], label[for="depart"], label[for="resp"], label[for="prof"], label[for="reserva-data"], label[for="reserva-hora"], label[for="num-alunos"], label[for="inputOthers"], label[for="email-resp"], label[for="email-resp"], label[for="solicitacoes"] {/* todo input dentro da class receberá o stylo*/
     width: 99%;
     padding: 12px;
