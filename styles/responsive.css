@@ -40,7 +40,7 @@
 @media (max-width: 700px){ /*Titulo do background RED */
     /*#banner-titulo { font-size: medium; }*/
 }
-/**------------------ CONFIGURAÇÕES DE RESOLUÇÃO ALTA ------------------**/
+
 
 
 
@@ -86,7 +86,6 @@
         #cad-logo{ height: 9vh; }
     }*/
 }
-/**------------------ CONFIGURAÇÕES DE RESOLUÇÃO ALTA ------------------**/
 
 
 
@@ -109,7 +108,7 @@
     }*/
     /*.a-logo:after{content: "";}*/
 }
-/**------------------ CONFIGURAÇÕES DE RESOLUÇÃO ALTA ------------------**/
+
 
 
 
@@ -118,18 +117,35 @@
 /*********************** SECTION.CSS ***********************/
 /*CONTEÚDO PRINCIPAL*/
 /*LAYOUT DO TEXTO*/
+@media(max-width: 524px) { #hidraulica-container, #pavimentacao-container { text-align: center; } }
 @media(min-width: 475px){
-    .display-container { display: flex; }
+    /*section*/
     .ul-aux-container { display: flex; justify-content: center; }
+    @media(min-width: 525px){
+        .display-container { display: flex; }
+        div[id="hidraulica-container"] { text-align: start; }
+        div[id="pavimentacao-container"] { text-align: end; }
+    }
 }
+@media(max-width:  999px){ div[id="edificios-container1"]{ display: block; } div[id="edificios-container2"]{ display: none; } }
+@media(min-width: 1000px){ div[id="edificios-container1"]{ display: none; } div[id="edificios-container2"]{ display: block; } }
 
 /*CARROSSEL SECTION*/
 /*LAYOUT CARROSSEL*/
 @media(min-width: 700px){
-    .carrossel-container { width: 40%; height: 30vw; }
+    .carrossel-container { width: 40%; margin: 15px auto; height: 30vw; }
+    .display-carrosseul { display: flex; }
+    .text-laboratorio { width: 40%; margin-right: 5vw; }
     .slide { height: 30vw; }
+    @media(min-width: 1400px){ .text-laboratorio { width: 30%; margin-right: 15vw; }
+        .carrossel-container {
+            width: 40%;
+            margin: 15px auto;
+            height: 30vw;
+        }.slide { height: 32vw; }
+    }
 }
-/**------------------ CONFIGURAÇÕES DE RESOLUÇÃO ALTA ------------------**/
+
 
 
 
@@ -162,37 +178,41 @@
     }
     /*.logo-fatec-footer { display: none; }*/
     
-    
 }
 /**------------------ CONFIGURAÇÕES DE RESOLUÇÃO ALTA ------------------**/
 @media(min-width: 850px){
     @media(max-width: 899px){#img-responsive { width: 70%; }}
-    @media(max-width: 900px){#img-responsive { width: 60%; }}
+    /*@media(max-width: 900px){#img-responsive { width: 60%; }}*/
     @media(min-width: 1200px){#img-responsive{ width: 50%; }}
-}
+}@media(min-width: 1000px){ #banner-titulo { width: 23vw; justify-content: center; } }
 @media(min-width: 1200px){
     @media(max-width: 1599px){#banner-titulo { font-size: large; }}
 }
 @media(min-width: 1600px ){
-    @media(max-width:1799px){.banner{ font-size: x-large; }
+    @media(max-width:1799px){#banner-titulo{ font-size: large; }
                              .p-footer { font-size: large; }
     }
 }@media(max-width: 1799px){ p[class="p-footer"]{ line-height: 25px; } }
 @media(min-width: 1800px){
     @media(max-width: 2199px){
-        .banner{ font-size: x-large; }
-
+        /*banner*/
+        #banner-titulo{ font-size: x-large; }
+        
+        /*menu*/
         .navbar-header { font-size: x-large; }
         .ul-menu-header .li-menu-header { margin: auto 50px; }
-
-        .dcc-background { font-size: xx-large; }
-        .div-container { font-size: x-large; }
-
-        .div-container-auxiliares { font-size: x-large;}
-        #b-aux-container { font-size: xx-large; }
-
-        .h2-footer { font-size: xx-large; }
-        .p-footer { font-size: x-large; line-height: 25px; }
+        
+        /*background*/
+        /*.dcc-background { font-size: xx-large; }*/
+        .div-container { font-size: large; }
+        
+        /*section - main*/
+        .div-container-auxiliares { font-size: large;}
+        #b-aux-container { font-size: x-large; }
+        
+        /*footer*/
+        .h2-footer { font-size: x-large; }
+        .p-footer { font-size: large; line-height: 25px; }
         .copy-right-footer { font-size: medium; }
     }
 }
@@ -200,17 +220,21 @@
 @media(min-width: 2200px){
     @media(max-width: 2799px){
         /*banner*/
-        .banner{ font-size: xx-large; }
+        .banner, .navbar-header { height: 100px; }
+        #banner-titulo{ font-size: xx-large; }
+        
         /*menu*/
         .navbar-header { font-size: x-large; }
         .ul-menu-header .li-menu-header { margin: auto 50px; }
+        
         /*background*/
-        .a-logo { font-size: xx-large; } 
+        /*.a-logo { font-size: xx-large; }*/
         /*section - main*/
         .div-container { font-size: x-large; }
 
         .div-container-auxiliares { font-size: x-large;}
         #b-aux-container { font-size: xx-large; }
+        
         /*footer*/
         .h2-footer { font-size: xxx-large; }
         .p-footer { font-size: xx-large; }
@@ -220,13 +244,18 @@
 
 @media(min-width: 2800px){
     /*banner - menu*/
-    #banner-titulo .navbar-header { height: 150px; }
-    .banner .navbar-header { font-size: xxx-large; }
+    .banner, .navbar-header { height: 150px; }
+    #banner-titulo, .navbar-header { font-size: xxx-large; }
+    
+    /*menu*/
+    .ul-menu-header .li-menu-header { margin: auto 50px; }
+
     /*section - main*/
     .div-container { font-size: xx-large; }
 
     .div-container-auxiliares { font-size: xx-large;}
     #b-aux-container { font-size: xxx-large; }
+   
     /*footer*/
     .h2-footer { font-size: xxx-large; }
     .p-footer { font-size: xx-large; }

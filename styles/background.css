@@ -19,7 +19,7 @@
     /*text-transform: uppercase;*/
     color: brown;
     transition: 0.3s;
-}.a-logo:hover { opacity: 0.7; }
+}.a-logo:hover { color: /*tomato* red* maroon* firebrick*/ darkred /*crimson; opacity: 0.7;*/ }
 
  /***************************************************/
 /*********************** IDs ***********************/
