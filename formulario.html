@@ -26,11 +26,12 @@
         fieldset {
             border: 3px solid dodgerblue
         }
-        legend {
+        legend { z-index: 1;
+            position: relative;
             background-color: dodgerblue;
             border:1px solid dodgerblue;
             padding: 10px;
-            text-align: center;
+            /*text-align: center;*/
             border-radius: 8px;
         }.inputBox {
             position: relative;
@@ -62,11 +63,12 @@
         }
     </style>
 </head>
-<body>
+<body onclick="disablecheck()" onkeypress="disablecheck()">
     <div class="box backgradient">
         <form action="https://formsubmit.co/b092a3476a9e1d898ccfc6c73c4a1ef7" method="POST">
             <fieldset>
                 <legend><b>Reversa Laboratorio</b></legend>
+                
                 <br/>
                 <div class="inputBox">
                     <input type="text" name="Curso/Disciplina" class="inputReserva" id="curso" placeholder="Ex: Desenhos de Construção Civil" autofocus required>
@@ -116,12 +118,13 @@
                 <input type="checkbox" name="Office 2019" id="office"><label for="office"> Office 2019</label>
                     <br/>
 
-                <input type="checkbox" name="Check Box Others" class="checkboxOthers" id="others" onfocus="this.checked='true'" onblur="if(this.value =='')this.checked"><label for="others"> Outher</label>
-                <input type="text" name="inputOthers" onkeyup="inicializa()" onfocus="disablecheck()" class="inputReserva inputOthers" id="others" placeholder="Ex: Visual Studio">
+                <input type="checkbox" name="Check Box Others" class="checkboxOthers" id="others" onfocus="this.checked='true'" onblur="if(this.value =='')this.checked=false">
+                <label for="others"> Outher</label>
+                <input type="text" name="inputOthers" onkeyup="inicializa()" onmouseout="disablecheck()" onpointerout="disablecheck()" onfocus="disablecheck()" class="inputReserva inputOthers" id="others" placeholder="Ex: Visual Studio">
                     <br/><br/>
 
                 <div class="inputBox">
-                    <input type="text" name="Estimativa da qtd de alunos" class="inputReserva" id="email-prof" placeholder="Ex:silvio@fatecsp.br" onfocus="this.type='email'" onblur="if(!this.value)this.type='text'" required>
+                    <input type="text" name="Estimativa da qtd de alunos" class="inputReserva" id="email-prof" placeholder="Ex:silvio@fatecsp.br" onfocus="this.type='email'" onblur="if(!this.value)this.type='text'"  required>
                     <label for="email-prof" class="labelInput">Email do Responsavel pela Reserva *</label>
                 </div>
                 <br/><br/>
@@ -157,6 +160,23 @@
                         font-size: 12px;
                         color: dodgerblue;
                     }/*.textareaReserva::first-letter + .labelInput{top:10px; font-size: normal; color: white;}*/
+
+                    /*div[class="border-animada"] {width: 100%; position: relative;}*/
+                    .path {
+                        width: 20px;
+                        height: 20px;
+                        background-color: dodgerblue;
+                        border-radius: 20px;
+                        text-align: center;
+                        /*position: relative;*/
+                    }.th-1{ animation: move 12s linear infinite; } 
+                     .th-2{ animation: move 15s linear infinite; }
+                     .th-3{ animation: move 18s linear infinite; }
+                    .rect-path { offset-path: rect(-20px auto auto auto );/* rect( <top> , <right> , <bottom> , <left> ) */ }
+                    @keyframes move {
+                          0% { offset-distance:   0%; }
+                        100% { offset-distance: 100%; }
+                    }
                 </style>
                 <br/><br/>
                 <div class="inputBox">
@@ -172,10 +192,18 @@
                     devolução das chaves. Aguarde confirmação da reserva no e-mail indicado.
                 </p>
                 <button type="submit">Send</button>
+                <div class="path th-1 rect-path">&nbsp;</div>
+                <div class="path th-2 rect-path">&nbsp;</div><!-- → -->
+                <div class="path th-3 rect-path">&nbsp;</div>
             </fieldset>
         </form>
     </div>
     <script>
+        /*while(checkOthers.checked == true){
+            if(putOthers.value == "")checkOthers.checked=true;
+            
+            alert(putOthers.value );
+        }*/
         // teclas-> Esc=27 Shift=16 Ctrl=17 Del=46 BackSpace=8 Tab=9 CapsLock=20 Space=32 '"=192 -=189  ==187 [=221 ]=220
         // F1-F12 -> 112-123 Windows=91 Alt=18
         let checkOthers = window.document.querySelector(".checkboxOthers");
@@ -185,7 +213,7 @@
         }
         //somente estão sendo desativadas teclas do lado esquerdo do teclado,
         //  teclas na parte de setas ou numericas de funções não foram desativas...
-        function inicializa(){var tecla = event.keyCode;
+        function inicializa(){let tecla = event.keyCode;
             if( tecla == 9 || tecla == 16 || tecla == 17 || tecla == 18 || tecla == 20 || tecla == 27 || tecla == 46 
             /*|| tecla == 91*/ || tecla == 187 || tecla == 189 || tecla == 192 || tecla == 220 || tecla == 220)
                  checkOthers.checked =false;
