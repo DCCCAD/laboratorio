@@ -29,7 +29,7 @@
 
         <p id="banner-titulo">
             <b>Laboratório Enedina Capuano</b>
-            <br/>
+                <br/>
             DCC-CAD Fatec SP / Edifícios
         </p>
     </div>
@@ -42,11 +42,11 @@
                 <div class="line3"></div>
             </div><!-- class: mobile-menu -->
             <ul class="ul-menu-header">
-                <li class="li-menu-header"><a class="a-menu-header" href="index.html">Home       </a></li>
+                <li class="li-menu-header"><a class="a-menu-header" href="#">Home       </a></li>
                 <li class="li-menu-header"><a class="a-menu-header" href="disciplinas.html">Disciplinas</a></li>
                 <li class="li-menu-header"><a class="a-menu-header" href="links.html">Links      </a></li>
                 <li class="li-menu-header"><a class="a-menu-header" href="calendario.html">Calendário </a></li>
-                <li class="li-menu-header"><a class="a-menu-header" href="#">Reservas   </a></li>
+                <li class="li-menu-header"><a class="a-menu-header" href="reservas.html">Reservas   </a></li>
                 <li class="li-menu-header"><a class="a-menu-header" href="teachersWork.html">Professores</a></li>
                 <li class="li-menu-header"><a class="a-menu-header" href="atendimento.html">Contate-nos</a></li>
                 <!--<option> Professores, Disciplinas, Ementa...</option>-->
@@ -54,91 +54,61 @@
         </nav> <!-- class: navbar-header -->
     </header>
 
-<!-- ********************** BACKGROUND ***********************-->
 
+<!-- ************** BACKGROUND *******************-->
+<!--<div class="dcc-background"><a class="a-logo" href="#"><p class="lab-capuano">DCC CAD</p></a></div>-->
 
 
 
 <!-- ****************** MAIN SECTION **********************-->
 <main>
     <section class="conteudo-main">
-        <div class="section-center">
-            <form class="reserva-cad" name="Reserva-Laboratorio" action="https://formsubmit.co/b092a3476a9e1d898ccfc6c73c4a1ef7" method="POST">
-                <h2 class="titulo-informativo">Reversa Laboratorio</h2>
-                <label for="curso">Curso/Disciplina *</label>
-                <input type="text" name="Curso_Disciplina" id="curso" placeholder="Ex: Desenhos de Construção Civil" required>
-                
+        <div class="section-center" style="text-align: center;">
+            <h2 style="font-weight: 600; font-family: cursive;">Autodesk Educacional</h2>
+            <div class="links">
+                <div class="video-cad" style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                    <br />
+                    <p style="color:chocolate;">Download Software</p>
+                    <br />
+                    <p style="color:chocolate;">Software gratuito</p>
+                    <br />
+                    <p>
+                        <br />
+                        &nbsp; Para acessar o site da Autodesk clique aqui e sigas os seguintes passos.
+                            <br />
+                        &nbsp; 1- A seguinte pagina se abrira ao clicar no link acima, clique no software desejado. Nas disciplinas de DCC utilizamos o AutoCAD, apenas na versão básica:
+                            <br />
+                        <img src="./images/AutoDesk.png" alt="Auto Desk" width="80" height="80" />
+                        &nbsp; 2- Será necessário se cadastrar como estudante, para isso, clique em “Create Account”:
+                            <br />
+                        <img src="./images/AutoDesk.png" alt="Auto Desk" width="80" height="80" />
+                            &nbsp; 3- Preencha os campos com os seus dados. Depois de preenchido será necessário confirmar o cadastro através do seu e-mail:
+                            <br />
+                        <img src="./images/AutoDesk.png" alt="Auto Desk" width="80" height="80" />
+                        &nbsp; 4- Depois de confirmado o e-mail, basta fazer log-in no site e selecionar a versão do software, a versão do Windows e o idioma:
+                            <br />
+                        <img src="./images/AutoDesk.png" alt="Auto Desk" width="80" height="80" />
+                        &nbsp; 5- Após definir a versão, clique em “install now” para iniciar o download. Após o download, basta abrir o programa e iniciar a instalação.
+                            <br />
+                        &nbsp; Obs.: Nessa mesma página está o número da serial e a chave de produto, eles serão necessários para a ativação do produto posteriormente, esses números serão enviados para o e-mail cadastrado também, assim é possível recuperar a serial em caso de perda.
+                            <br />
+                    </p>
+                    <br />
+                    <p style="color:chocolate;">Download Software</p>
+                    <p> Para fazer o download do Software
+                        <a href="./download.html">clique aqui</a>
+                        e siga as instruções.
+                    </p>
+                    <br />
+                    <div class="img-autodesk" style="align-items: center; width: 100%;">
+                        <img src="./images/AutoDesk.png" alt="Auto Desk" width="80" height="80" />
+                    </div>
+                </div><!-- class: video-cad -->
+            </div><!-- class: links -->
 
-                <label for="depart">Departamento *</label>
-                <input type="text" name="Departamento" id="depart" placeholder="Ex: Edifícios" maxlength="100"  required>
-
-                <label for="resp">Nome do(a) Responsavel pelo Curso/Disciplina *</label>
-                <input type="text" name="Responsavel" id="resp" placeholder="Ex: Prof. Me. Ieda M. Nolla" required>
-
-                <label for="prof">Nome do Professor(a) que ministrará o Curso/Disciplina *</label>
-                <input type="text" name="Professor" id="prof" placeholder="Ex: Prof. Silvio A. Santos" required>
-
-                <!-- ONFOCUS quando click no input torna-se do type='time' e ONBLUR caso não seja inserido algum valor volta a ser type='text' -->
-                <label for="reserva-data">Data da Reserva e Horário *</label>
-                <input type="text" name="DataHorario_Reserva" id="reserva-data" placeholder="dd/mm/aaaa hh:mm" onfocus="this.type='datetime-local'" onblur="if(!this.value)this.type='text'" required>
-
-                <label for="reserva-hora">Horário da Reserva *</label>
-                <input type="text" name="Horário_Reserva" id="reserva-hora" placeholder="hh:mm" onfocus="this.type='time'" onblur="if(!this.value)this.type='text'" required>
-
-                <label for="num-alunos">Estimativa da quantidade de alunos *</label>
-                <input type="number" name="Estimativa_qtd_alunos" id="num-alunos" placeholder="Max: 20 alunos por laboratório" required>
-
-            <label for="inputOthers">Programas *</label><br/>
-                <!--<div name="Programas" id="programs">--><!--</div>-->
-                <input type="checkbox" name="AutoCAD_2025" id="autocad" checked><label for="autocad"> AutoCad 2024/5</label>
-                    <br/>
-                <input type="checkbox" name="SketchUP" id="sketchup"><label for="sketchup"> SketchUP</label>
-                    <br/>
-                <input type="checkbox" name="Revit_2025" id="revit"><label for="revit">  Revit 2024/5</label>
-                    <br/>
-                <input type="checkbox" name="Office_2019" id="office"><label for="office"> Office 2019</label>
-                    <br/>
-                <input type="checkbox" name="Others" id="checkOthers"><label for="checkOthers"> Others</label>
-                <input type="text" name="putOthers" id="inputOthers" placeholder="Ex: Visual Studio">
-                    <br/><br/>
-                
-                <label for="email-resp">Email do Responsável pela reserva *</label>
-                <input type="email" name="Email_Responsável_Reserva" id="email-resp" placeholder="Ex:silvio@fatecsp.br" required>
-
-                <br/><br/>
-                <p>&nbsp; O laboratório Enedina Capuano pertence ao departamento de Edifícios, que disponibiliza as grades horárias semestralmente. Desta forma, a reserva dos horários disponíveis deverá ser feita no início de cada semestre. *</p>
-                &NonBreakingSpace; <input type="checkbox" name="Ciente" id="ciente" required>
-                <label for="ciente"> Ciente</label>
-                <br/><br/>
-                
-                <label for="solicitacoes">Campo para solicitar um Pedido/Item/Observações</label>
-                <p id="adendo-forms">Caso precise de uma monitoria durante o uso do laboratório escreva aqui...</p>
-                <textarea name="Obs" id="solicitacoes" wrap="hard" placeholder="Diga-me o seu pedido..."></textarea>
-
-                    <!--<label for="file">Arquivo</label>
-                    <input type="file" name="Arquivo" id="file">-->
-                
-                <br/><br/>
-                
-                
-                <!--<input type="hidden" name="_next" value="https://formsubmit.co/b092a3476a9e1d898ccfc6c73c4a1ef7">-->
-                <p id="legenda-simbolos"> * Campo Obrigatório </p>
-                <h2 class="titulo-informativo">Aviso</h2>
-                <p>&nbsp; Aos responsáveis pela reserva do Laboratório, compete 
-                    zelar pela integridade das instalações, o cumprimento das regras do laboratório e pela eventual retirada e 
-                    devolução das chaves. Aguarde confirmação da reserva no e-mail indicado.</p>
-                <button type="submit" name="submit" id="btn-submit">Send</button>
-            </form>
-
-            <br/>
-            <img src="./images/normasLAB.jpg" alt="Normas do Laboratório">
-        </div>
+        </div><!-- class: section-center -->
     </section>
-    <div class="grade-lab">
-        <img src="./images/gradeAulas2024.jpg" alt="Grade do Laboratório" id="gradeAula">
-    </div>
 </main>
-
 
     <!--*********************** FOOTER ****************************-->
     <footer class="rodape" id="footer">
