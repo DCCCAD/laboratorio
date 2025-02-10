@@ -175,11 +175,22 @@
     }
     
     .footer-col {/*margin-bottom: 5vh;*/
-        margin: 0vh auto auto 6vw; justify-content: center;
+        margin: 0vh auto auto 6vw;
     }
-    /*.logo-fatec-footer { display: none; }*/
-    
+    div[class="footer-col2"] {/*margin-bottom: 5vh;*/
+        margin: 0vh 2vw auto 6vw;
+    }
+}@media(min-width: 2300px){
+    div[class="footer-col2"] {/*margin-bottom: 5vh;*/
+        margin: 0vh 2vw auto 4vw;
+    }
+    .footer-col {/*margin-bottom: 5vh;*/
+        margin: 0vh auto auto 4vw;
+    }
 }
+/*.logo-fatec-footer { display: none; }*/
+    
+
 /* QG002 -> Quebra Galho 002 */
 @media(max-width: 1224.99px){/*posicionando textos DUPLICADOS no footer (Localização Fatec SP) */
     div[id="footer-desenvolvedores1"]{ display: block; }
@@ -241,6 +252,7 @@ TAREFAS:
         /*section - main*/
         .div-container-auxiliares { font-size: large;}
         #b-aux-container { font-size: x-large; }
+        p.text-carrosseul { font-size: larger; }
         
         /*footer*/
         .h2-footer { font-size: x-large; }
@@ -266,10 +278,11 @@ TAREFAS:
 
         .div-container-auxiliares { font-size: x-large;}
         #b-aux-container { font-size: xx-large; }
+        p.text-carrosseul { font-size: x-large; }
         
         /*footer*/
-        .h2-footer { font-size: xxx-large; }
-        .p-footer { font-size: xx-large; }
+        .h2-footer { font-size: xx-large; }
+        .p-footer { font-size: x-large; }
         .copy-right-footer { font-size: medium; }
         }
 }
@@ -287,6 +300,7 @@ TAREFAS:
 
     .div-container-auxiliares { font-size: xx-large;}
     #b-aux-container { font-size: xxx-large; }
+    p.text-carrosseul { font-size: xx-large; }
    
     /*footer*/
     .h2-footer { font-size: xxx-large; }
