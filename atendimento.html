@@ -14,6 +14,80 @@
     <link rel="stylesheet" href="./styles/responsive.css"/>
     <link rel="stylesheet" href="./styles/root.css"      />
     <link rel="stylesheet" href="./styles/default.css"   />
+    <style>
+        .box {
+            color: black;
+            position: relative;
+            /*background-color: rgb(20, 70, 90, 0.8);*/
+            /*transform: translate(-50%, -50%);*/
+            padding: 15px;
+            border-radius: 15px;
+            /*top: 60%;
+            left: 50%;
+            width: 70%;*/
+        }
+
+        .inputBox {
+            position: relative;
+        }
+        .inputReserva {
+            background: none; border: none;
+            border-bottom: 1px solid cadetblue;
+            outline: none;
+            color: cadetblue;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }.inputReserva::placeholder { text-align: end; }
+        .labelInput {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5s;
+        }
+        .inputReserva:focus ~ .labelInput,
+        .inputReserva:valid ~.labelInput {
+            top: -20px;
+            font-size: 12px;
+            color: cadetblue;   
+        }
+
+        .textareaReserva {
+            line-height: 8px;
+            background: none; border: none;
+            border-bottom: 1px solid cadetblue;
+            outline: none;
+            color: cadetblue;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }.textareaReserva::placeholder { position: relative; text-align: end; right: 10px; top: 5px; }/*20px*/
+        .textareaReserva:focus { line-height: normal; height: auto!important; }
+        .labelTextarea {
+            position: absolute;
+            top: 0px;/*20px*/
+            left: 0px;
+            pointer-events: none;
+            transition: .5s;
+        }
+        .textareaReserva:focus ~ .labelTextarea .textareaReserva ~ .labelTextarea {
+            top: -20px;
+            font-size: 12px;
+            color:cadetblue;
+        }
+    </style>
+    <script>
+            let labelput = window.document.getElementByClassName(".labelTextarea");
+            let msgArea = window.document.getElementByClassName("messageArea");
+            let txtarea = window.document.getElementByClassName(".textareaReserva").addEventListenner("keydown", HTMLElement.style = `
+                     .textareaReserva ~ .labelTextarea {
+                        top: -20px;
+                        font-size: 12px;
+                        color: dodgerblue;
+                    }`
+        );
+    </script>
 </head>
 <body>
     
@@ -65,23 +139,31 @@
         <section class="conteudo-main">
             <div class="section-center">
                 <div class="box">
-                    <form class="reserva-cad" name="Reserva-Laboratorio" action="https://formsubmit.co/b092a3476a9e1d898ccfc6c73c4a1ef7" method="POST" enctype="multipart/form-data">
+                    <form class="atendimento-cad" name="Reserva-Laboratorio" action="https://formsubmit.co/b092a3476a9e1d898ccfc6c73c4a1ef7" method="POST" enctype="multipart/form-data">
                         <fieldset>
                             <legend><b>Fale Conosco</b></legend>
                             <p>Fale conosco para sugestões ou  reclamações.
-                                <br/> A sua colaboração e bem vinda!
+                                <br/> A sua colaboração é bem vinda!
                             </p>
                             <br/>
                             <div class="inputBox">
                                 <input type="text" name="Responsavel" class="inputReserva" id="resp" placeholder="Ex: Prof. Me. Ieda M. Nolla" required>
-                                <label for="resp" class="labelInput">Nome do(a) Responsavel pelo Curso/Disciplina *</label>
+                                <label for="resp" class="labelInput">Email *</label>
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" name="Responsavel" class="inputReserva" id="resp" placeholder="Ex: Prof. Me. Ieda M. Nolla" required>
+                                <label for="resp" class="labelInput">Nome *</label>
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" name="Responsavel" class="inputReserva" id="resp" placeholder="Ex: Prof. Me. Ieda M. Nolla" required>
+                                <label for="resp" class="labelInput">Assunto *</label>
                             </div>
                             <br/><br/>
 
 
                             <div class="inputBox messageArea">
-                                <textarea name="Message" class="textareaReserva" id="solicitacoes" wrap="hard" placeholder="Diga-me o seu pedido..."></textarea>
-                                <label for="solicitacoes" class="labelTextarea">Campo para solicitar algum Pedido/Item</label>
+                                <textarea name="Message" class="textareaReserva " id="mensagem" wrap="hard" placeholder="Diga-me o seu pedido..."></textarea>
+                                <label for="solicitacoes" class="labelTextarea">Mensagem *</label>
 
                             </div>
                             <button type="submit">Send</button>
