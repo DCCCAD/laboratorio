@@ -3,7 +3,7 @@
 /***************** CLASS *******************/
 .rodape {
     background-color: rgb(53, 53, 53);
-    padding: 8vh 0vw 6vh 0vw;
+    padding: 2vh 0vw 6vh 0vw;
     font-family: sans-serif;
     color: white;
 }
@@ -12,12 +12,14 @@
     /*margin: auto;*/
 }
 .footer-col {
-    margin: 2vh 1vw 8vh 6vw;
+    margin: 0vh 6vw auto 6vw;
+    /*margin: 2vh 1vw 8vh 6vw;*/
     /*margin: 2vh 3vw 2vh 3vw;*/
     /*text-align: center;*/
 }
 /*.p-footer { /*margin-top: 2px; line-height: 18px;*/ /*font-size: var(--fontsz-m);* }*/
-/*.h2-footer { padding-top: 15px; }*/
+.h2-footer { margin-top: 4vh; }
+.p-footer { margin-top: 2vh; }
 
 .logo-fatec-footer {
     display: flex;
@@ -28,7 +30,7 @@
 }
 
 .copy-right-footer {
-    font-size: small;
+    font-size: x-small;
     text-align: center;
     /*margin: auto;
     width: 70%;*/
@@ -42,6 +44,7 @@
 #span-img-footer:before {
     display: flex;
     margin: 4vh auto 4vh auto;
+    /*margin: -10vh auto 4vh auto;*/
     height: 15vh;
     /*justify-content: center;*/
     background: url(../images/logofatec.png) no-repeat center center;
