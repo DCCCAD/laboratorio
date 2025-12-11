@@ -69,10 +69,10 @@
                 <input type="text" name="Curso_Disciplina" id="curso" placeholder="Ex: Desenhos de Construção Civil" required>
                 
 
-                <label for="depart">Departamento *</label>
+                <label for="depart">Departamento/Coordenadoria *</label>
                 <input type="text" name="Departamento" id="depart" placeholder="Ex: Edifícios" maxlength="100"  required>
 
-                <label for="resp">Nome do(a) Responsavel pelo Curso/Disciplina *</label>
+                <label for="resp">Nome do(a) Coordenador(a) do Curso/Disciplina *</label>
                 <input type="text" name="Responsavel" id="resp" placeholder="Ex: Prof. Me. Ieda M. Nolla" required>
 
                 <label for="prof">Nome do Professor(a) que ministrará o Curso/Disciplina *</label>
@@ -82,33 +82,30 @@
                 <label for="reserva-data">Data da Reserva e Horário *</label>
                 <input type="text" name="DataHorario_Reserva" id="reserva-data" placeholder="dd/mm/aaaa hh:mm" onfocus="this.type='datetime-local'" onblur="if(!this.value)this.type='text'" required>
 
-                <label for="reserva-hora">Horário da Reserva *</label>
-                <input type="text" name="Horário_Reserva" id="reserva-hora" placeholder="hh:mm" onfocus="this.type='time'" onblur="if(!this.value)this.type='text'" required>
+                <label for="reserva-hora">Tempo de utilização da Reserva *</label>
+                <input type="text" name="Horário_Reserva" id="reserva-hora" placeholder="2 hora/aula" onfocus="this.type='number'" onblur="if(!this.value)this.type='text'" required>
 
                 <label for="num-alunos">Estimativa da quantidade de alunos *</label>
                 <input type="number" name="Estimativa_qtd_alunos" id="num-alunos" placeholder="Max: 20 alunos por laboratório" required>
 
             <label for="inputOthers">Programas *</label><br/>
                 <!--<div name="Programas" id="programs">--><!--</div>-->
-                <input type="checkbox" name="AutoCAD_2025" id="autocad" checked><label for="autocad"> AutoCad 2024/5</label>
-                    <br/>
-                <input type="checkbox" name="SketchUP" id="sketchup"><label for="sketchup"> SketchUP</label>
-                    <br/>
-                <input type="checkbox" name="Revit_2025" id="revit"><label for="revit">  Revit 2024/5</label>
-                    <br/>
-                <input type="checkbox" name="Office_2019" id="office"><label for="office"> Office 2019</label>
-                    <br/>
-                <input type="checkbox" name="Others" id="checkOthers"><label for="checkOthers"> Others</label>
-                <input type="text" name="putOthers" id="inputOthers" placeholder="Ex: Visual Studio">
-                    <br/><br/>
-                
-                <label for="email-resp">Email do Responsável pela reserva *</label>
-                <input type="email" name="Email_Responsável_Reserva" id="email-resp" placeholder="Ex:silvio@fatecsp.br" required>
+                <p>&nbsp; O laboratório dispõe da seguinte infraestrutura de software: Pacote Office, MS Project, AutoCAD 2025, Revit 2026 e SketchUp 2017.
 
-                <br/><br/>
-                <p>&nbsp; O laboratório Enedina Capuano pertence ao departamento de Edifícios, que disponibiliza as grades horárias semestralmente. Desta forma, a reserva dos horários disponíveis deverá ser feita no início de cada semestre. *</p>
-                &NonBreakingSpace; <input type="checkbox" name="Ciente" id="ciente" required>
-                <label for="ciente"> Ciente</label>
+Para a utilização de programas adicionais, é obrigatório que o docente responsável forneça os arquivos de instalação e as chaves de ativação. O prazo necessário para a configuração das máquinas é de, no mínimo, 7 dias úteis.</p>
+                <br />
+                <label for="checkOthers"> Há necessidade de instalar algum programa?</label><input type="text" name="putOthers" id="inputOthers" placeholder="Digite o nome do programa. Ex.: 3ds Max">
+                    <br/><br/>
+                    
+                    <label for="email-resp">Email do Responsável pela reserva *</label>
+                    <input type="email" name="Email_Responsável_Reserva" id="email-resp" placeholder="Ex:silvio@fatecsp.br" required>
+                    
+                    <br/>
+                    <img src="./images/normasLAB.jpg" alt="Normas do Laboratório">
+                    <br/><br/>
+                    <p>&nbsp; O laboratório Enedina Capuano pertence ao departamento de Edifícios, que disponibiliza as grades horárias semestralmente. Desta forma, a reserva dos horários disponíveis deverá ser feita no início de cada semestre. *</p>
+                    &NonBreakingSpace; <input type="checkbox" name="Ciente" id="ciente" required>
+                <label for="ciente"> <b>Ciente sobre as normas e avisos</b></label>
                 <br/><br/>
                 
                 <label for="solicitacoes">Campo para solicitar um Pedido/Item/Observações</label>
@@ -130,11 +127,10 @@
                 <button type="submit" name="submit" id="btn-submit">Send</button>
             </form>
 
-            <br/>
-            <img src="./images/normasLAB.jpg" alt="Normas do Laboratório">
         </div>
     </section>
     <div class="grade-lab">
+        <br />
         <img src="./images/gradeAulas2024.jpg" alt="Grade do Laboratório" id="gradeAula">
     </div>
 </main>
@@ -155,9 +151,9 @@
                         <br/>
                         CEP 01124-060
                         <br/>
-                        Email: edificio@fatecsp.br
+                        Email: f002acad@cps.sp.gov.br
                         <br/>
-                        Telefone: (11) 3322-2200 - FATEC SP
+                        Telefone: (11) 3322-2249 - FATEC SP
                     </p> <!-- class: p-footer -->
                 </div> <!-- class: footer-col -->
                 
@@ -168,7 +164,7 @@
                         <br/>
                         Contato: iedamaria@fatecsp.br
                         <br/>
-                        Telefone: (11) 3322-2273
+                        Telefone: (11) 3322-2200
                         <br/>
                         Fatec SP Bloco B - 2° Andar
                         <br/>
@@ -182,7 +178,7 @@
                     <p class="p-footer">
                         Localizado: Terréo (Bloco A e B) 
                             <br/>
-                        Email: edificio@fatecsp.br
+                        Email: coord.edificios@fatecsp.br
                             <br/>
                         Telefone: (11) 3322-2278
                     </p> <!-- class: p-footer -->
