@@ -19,7 +19,29 @@
 .ul-menu-header { display: flex; list-style: none; text-align: center; }
 .ul-menu-header .li-menu-header { letter-spacing: 3px; margin: auto 20px; }/*margin: 3vh 2vw 3vh 2vw;} /*Top, left, bottom, right*/
 
-
+.ul-disciplinas-menu {
+    background-color: #23232e;
+    opacity: 0.94;
+    list-style: none;
+    color: paleturquoise;
+    justify-items: center;
+    position: absolute;
+    top: 10rem;
+    margin: auto -50px;
+    padding: 25px;
+}
+.ul-disciplinas-profs {
+    left: 100%;
+    top: 0%;
+    width: 100%;
+    position: absolute;
+    background: #23232e;
+    list-style: none;
+    padding: 10px;
+    /*display: inline-block;*/
+    align-items: center;
+    text-align: start;
+}
  /********************************/
 /*PARTE DO BOTÃO MENU RESPONSIVO*/
 .mobile-menu {
