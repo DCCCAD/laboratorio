@@ -101,12 +101,12 @@ Para a utilização de programas adicionais, é obrigatório que o docente respo
                     <input type="email" name="Email_Responsável_Reserva" id="email-resp" placeholder="Ex:silvio@fatecsp.br" required>
                     
                     <br/>
-                    <img src="./images/normasLAB.jpg" alt="Normas do Laboratório">
-                    <br/><br/>
-                    <p>&nbsp; O laboratório Enedina Capuano pertence ao departamento de Edifícios, que disponibiliza as grades horárias semestralmente. Desta forma, a reserva dos horários disponíveis deverá ser feita no início de cada semestre. *</p>
-                    &NonBreakingSpace; <input type="checkbox" name="Ciente" id="ciente" required>
-                <label for="ciente"> <b>Ciente sobre as normas e avisos</b></label>
-                <br/><br/>
+                    <div class="grade-lab">
+                        <br />        
+                        <img src="./images/normasLAB.jpg" alt="Normas do Laboratório">   
+                    </div>-->
+                    <br/>
+                    <br/>
                 
                 <label for="solicitacoes">Campo para solicitar um Pedido/Item/Observações</label>
                 <p id="adendo-forms">Caso precise de uma monitoria durante o uso do laboratório escreva aqui...</p>
@@ -121,10 +121,20 @@ Para a utilização de programas adicionais, é obrigatório que o docente respo
                 <!--<input type="hidden" name="_next" value="https://formsubmit.co/b092a3476a9e1d898ccfc6c73c4a1ef7">-->
                 <p id="legenda-simbolos"> * Campo Obrigatório </p>
                 <h2 class="titulo-informativo">Aviso</h2>
+                <br />
+                <p>&nbsp; O laboratório Enedina Capuano pertence ao departamento de Edifícios, que disponibiliza as grades horárias semestralmente. Desta forma, a reserva dos horários disponíveis deverá ser feita no início de cada semestre. *</p>
+                
+                <br />
                 <p>&nbsp; Aos responsáveis pela reserva do Laboratório, compete 
                     zelar pela integridade das instalações, o cumprimento das regras do laboratório e pela eventual retirada e 
                     devolução das chaves. Aguarde confirmação da reserva no e-mail indicado.</p>
+                <br />
+                    <p>&nbsp; O laboratório Enedina Capuano pertence ao departamento de Edifícios, que disponibiliza as grades horárias semestralmente. Desta forma, a reserva dos horários disponíveis deverá ser feita no início de cada semestre. *</p>
+                &NonBreakingSpace; <input type="checkbox" name="Ciente" id="ciente" required>
+                <label for="ciente"> <b>Ciente sobre as normas e avisos</b></label>
+                <br/>
                 <button type="submit" name="submit" id="btn-submit">Send</button>
+                <br />
             </form>
 
         </div>
@@ -238,5 +248,6 @@ Para a utilização de programas adicionais, é obrigatório que o docente respo
  </body>
 
 </html>
+
 
 
